@@ -13,9 +13,39 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-          one:
+          in1:
             type: string
             default: one
+          in2:
+            type: string
+            default: two
+          in3:
+            type: string
+            default: three
+          in4:
+            type: string
+            default: four
+          in5:
+            type: string
+            default: five
+          in6:
+            type: string
+            default: six
+          in7:
+            type: string
+            default: seven
+          in8:
+            type: string
+            default: eight
+          in9:
+            type: string
+            default: nine
+          in10:
+            type: string
+            default: ten
+          in11:
+            type: string
+            default: eleven
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
