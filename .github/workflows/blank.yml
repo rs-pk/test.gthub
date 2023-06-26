@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
         inputs:
           name:
-            type: multi-choice
+            type: choice
             default: go-service1
             description: select packages
             options: 
@@ -20,14 +20,16 @@ on:
             - go-service2
             - py-service1
           in2:
-            type: string
-            default: two
+            type: boolean
+            description: 'boolean param'
+            default: True
           in3:
             type: string
             default: three
           in4:
-            type: string
-            default: four
+            type: environment
+            description: set env variable 
+            default: test
           in5:
             type: string
             default: five
@@ -63,7 +65,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world! github.event.inputs.one
+        run: echo Hello, world! {{github.event.inputs.in2}}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
