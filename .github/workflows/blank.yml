@@ -18,7 +18,7 @@ on:
             - go-service1
             - go-service2
             - py-service1
-            - input()
+
           in2:
             type: string
             default: two
