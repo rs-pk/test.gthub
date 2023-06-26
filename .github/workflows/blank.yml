@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
         inputs:
           name:
-            type: choice
+            type: multi-choice
             default: go-service1
             description: select packages
             options: 
