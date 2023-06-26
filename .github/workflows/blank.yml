@@ -12,10 +12,15 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-          in1:
-            type: string
-            default: one
+        inputs:
+          name:
+            type: multi-choice
+            description: select packages
+            options: 
+            - go-service1
+            - go-service2
+            - py-service1
+            - input()
           in2:
             type: string
             default: two
