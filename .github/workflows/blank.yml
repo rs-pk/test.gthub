@@ -65,8 +65,8 @@ jobs:
       - name: Run a one-line script
         id: step1
         shell: pwsh
-        run: > 
-            "childitems = want_to_get_output" >> $GITHUB_OUTPUT
+        run: >
+          "childitems = want_to_get_output" >> $GITHUB_OUTPUT
 
       # display output
       - name: will display output of a last command
