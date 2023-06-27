@@ -72,6 +72,6 @@ jobs:
       - name: will display output of a last command
         id: step2
         shell: pwsh
-        run: write-host "${{ steps.step1.outputs }}"
+        run: write-host "${{ steps.step1.outputs.childitems }}"
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
