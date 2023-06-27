@@ -68,7 +68,9 @@ jobs:
         run: echo Hello, world! ${{github.event.inputs.in3}}
         
       # List files of a repository
-      - name: List files in the repository
-        run: |
-          ll ${{ github.workspace }}
+      - powershell: Get-ChildItem -Path  ${{ github.workspace }}
+      
+      
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      
+      
