@@ -69,7 +69,8 @@ jobs:
         # # List files of a repository
 
         # - run: Get-ChildItem -Path  ${{ github.workspace }}
-        run: echo "{childitems} = {Get-ChildItem -Path  ${{ github.workspace }}}" >> "$GITHUB_OUTPUT"
+        # run: echo "{childitems} = {Get-ChildItem -Path  ${{ github.workspace }}}" >> "$GITHUB_OUTPUT"
+        run: echo "{childitems} = {want_to_get_output}" >> "$GITHUB_OUTPUT"
 
       # display output
       - name: will display output of a last command.
