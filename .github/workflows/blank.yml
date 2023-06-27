@@ -6,30 +6,28 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
 
-
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-        inputs:
-          name:
-            type: choice
-            default: go-service1
-            description: select packages
-            options: 
-            - go-service1
-            - go-service2
-            - py-service1
-          in2:
-            type: boolean
-            description: 'boolean param'
-            default: False
-          in3:
-            type: string
-            default: three
-          in4:
-            type: environment
-            description: set env variable 
-            default: test
+    inputs:
+      name:
+        type: choice
+        default: go-service1
+        description: select packages
+        options:
+          - go-service1
+          - go-service2
+          - py-service1
+      in2:
+        type: boolean
+        description: "boolean param"
+        default: False
+      in3:
+        type: string
+        default: three
+      in4:
+        type: environment
+        description: set env variable
+        default: test
     #       in5:
     #         type: string
     #         default: five
@@ -66,19 +64,16 @@ jobs:
       # Runs a single command to List files of a repository
       - name: Run a one-line script
         id: step1
-      #   run: echo Hello, world! ${{github.event.inputs.in3}}
-        
-      # # List files of a repository
-      
-      # - run: Get-ChildItem -Path  ${{ github.workspace }}
-        run: echo {childitems} = {Get-ChildItem -Path  ${{ github.workspace }}} >> $GITHUB_OUTPUT
+        #   run: echo Hello, world! ${{github.event.inputs.in3}}
 
-      # display output 
+        # # List files of a repository
+
+        # - run: Get-ChildItem -Path  ${{ github.workspace }}
+        run: echo "{childitems} = {Get-ChildItem -Path  ${{ github.workspace }}}" >> "$GITHUB_OUTPUT"
+
+      # display output
       - name: will display output of a last command.
         id: step2
-        run: echo output of last command is:-----${{ steps.step1.outputs.childitems }}
-        
-      
+        run: echo "${{ steps.step1.outputs.childitems }}""
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      
-      
