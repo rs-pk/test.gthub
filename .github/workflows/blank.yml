@@ -63,15 +63,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      # Runs a single command to List files of a repository
       - name: Run a one-line script
         id: step1
-        run: echo Hello, world! ${{github.event.inputs.in3}}
+      #   run: echo Hello, world! ${{github.event.inputs.in3}}
         
-      # List files of a repository
+      # # List files of a repository
       
-      - run: Get-ChildItem -Path  ${{ github.workspace }}
-      - run: echo "childitems = Get-ChildItem -Path  ${{ github.workspace }}" >> "$GITHUB_OUTPUT"
+      # - run: Get-ChildItem -Path  ${{ github.workspace }}
+        run: echo childitems = Get-ChildItem -Path  ${{ github.workspace }} >> $GITHUB_OUTPUT
 
       # display output 
       - name: will display output of a last command.
