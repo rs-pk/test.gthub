@@ -73,7 +73,7 @@ jobs:
         run: echo "{childitems} = {want_to_get_output}" >> "$GITHUB_OUTPUT"
 
       # display output
-      - name: will display output of a last command.
+      - name: will display output of a last command
         id: step2
         run: echo "${{ steps.step1.outputs.childitems }}""
 
