@@ -65,12 +65,18 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        id: step1
         run: echo Hello, world! ${{github.event.inputs.in3}}
         
       # List files of a repository
+      
       - run: Get-ChildItem -Path  ${{ github.workspace }}
-      - run: echo "Get-ChildItem -Path  ${{ github.workspace }}" >> "$GITHUB_OUTPUT"
+      - run: echo "childitems = Get-ChildItem -Path  ${{ github.workspace }}" >> "$GITHUB_OUTPUT"
 
+      # display output 
+      - name: will display output of a last command.
+        id: step2
+        run: echo "output of last command is:-----(${{ steps.step1.outputs.childitems }})"
         
       
       - run: echo "🍏 This job's status is ${{ job.status }}."
