@@ -1,0 +1,68 @@
+name: new-test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: My Step
+        run: echo "Hello, world!"
+
+    inputs:
+      param1:
+        description: 'Parameter 1'
+        required: true
+      param2:
+        description: 'Parameter 2'
+        required: true
+      param3:
+        description: 'Parameter 3'
+        required: true
+      in4:
+        type: environment
+        description: set env variable
+        default: test
+      in5:
+        type: string
+        description: five
+        default: five
+      in6:
+        type: string
+        description: six
+        default: six
+      in7:
+        type: string
+        description: enter a value of a param
+        default: seven
+      in8:
+        type: string
+        description: enter a value of a param
+        default: eight
+      in9:
+        type: string
+        description: enter a value of a param
+        default: nine
+      in10:
+        type: string
+        description: enter a value of a param
+        default: ten
+      in11:
+           type: string
+           description: enter a value of a param
+           default: eleven
+
+
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v3
+
+        # Runs a single command to List files of a repository
+        - name: Run a one-line script
+          id: step1
+          shell: pwsh
+          run: > Write-Host 
