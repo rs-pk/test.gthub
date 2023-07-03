@@ -23,32 +23,40 @@ on:
         default: False
       in3:
         type: string
+        description: enter a value of a param
         default: three
       in4:
         type: environment
         description: set env variable
         default: test
-    #       in5:
-    #         type: string
-    #         default: five
-    #       in6:
-    #         type: string
-    #         default: six
-    #       in7:
-    #         type: string
-    #         default: seven
-    #       in8:
-    #         type: string
-    #         default: eight
-    #       in9:
-    #         type: string
-    #         default: nine
-    #       in10:
-    #         type: string
-    #         default: ten
-    #  #     in11:
-    #   #      type: string
-    #    #     default: eleven
+      in5:
+        type: string
+        description: five
+        default: five
+      in6:
+        type: string
+        description: six
+        default: six
+      in7:
+        type: string
+        description: enter a value of a param
+        default: seven
+      in8:
+        type: string
+        description: enter a value of a param
+        default: eight
+      in9:
+        type: string
+        description: enter a value of a param
+        default: nine
+      in10:
+        type: string
+        description: enter a value of a param
+        default: ten
+      in11:
+           type: string
+           description: enter a value of a param
+           default: eleven
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
