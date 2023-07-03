@@ -56,13 +56,3 @@ jobs:
            description: enter a value of a param
            default: eleven
 
-
-      steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v3
-
-        # Runs a single command to List files of a repository
-        - name: Run a one-line script
-          id: step1
-          shell: pwsh
-          run: > Write-Host 
